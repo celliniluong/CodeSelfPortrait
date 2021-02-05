@@ -1,22 +1,44 @@
-//Variables
-var x = 25;
-var h = 20;
-
+//Global
+var gDebugMode = true;
+var x = 299;
+var y = 299;
 
 // Setup code goes here
 function setup() {
-  createCanvas(480,120);
+  createCanvas(600,600);
   noStroke();
  }
 
 
-// Draw code goes here
+// Background
 function draw() {
-	background(204);
-	for (var y = 0; y <= height; y += 40) {
-		for (var x = 0; x <= width; x += 40) {
-			fill(255, 140);
-			ellipse(x, y, 40, 40);
-		}
+	background(205);
+	
+	// Debug Mode
+	if( gDebugMode == true ) {
+		drawDebugInfo();
 	}
+
+	// Hair
+	fill(100);
+	rect(x - 120, y-40, 240, 200);
+	ellipse(x, y-40, 240, 300);
+
+	// Face
+	fill(50);
+	ellipse(x, y - 60, 200, 230);
+
+	// Neck
+	quad(x - 30, 324, x + 30, 324, x + 50, 394, x - 50, 394);
+	ellipse(x, 396, 100, 60);
+
+	
+}
+
+
+
+//Draw debug mode
+function drawDebugInfo() {
+	fill(255);
+	text("x: " + mouseX + "  Y: " + mouseY, 20, height - 20);
 }
