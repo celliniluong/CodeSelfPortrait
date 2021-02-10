@@ -8,4 +8,4 @@ My self portrait through p5.js
 
 
 ### Technical
-Modify the sketch.js setup() and draw() functions and begin adding functions!
+Working with simple shapes and the draw() function I created a self portrait through P5.js.
